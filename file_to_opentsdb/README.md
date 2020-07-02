@@ -22,7 +22,7 @@
        https://github.com/docker/toolbox/releases
 
 ## 사용방법
-###  1. github repo clone 혹은 zip파일 다운로드
+  1. github repo clone 혹은 zip파일 다운로드
   
       - git clone
       
@@ -41,12 +41,12 @@
             unzip compose.zip </pre>
 
       
-###  2. file_to_opentsdb compose 디렉토리로 이동
+  2. file_to_opentsdb compose 디렉토리로 이동
   
             $ cd KETI_docker_sw/file_to_opentsdb/compose/
   
   
-###  3. docker-compose.yml파일 수정(수정할 내용은 하단에 기재)
+  3. docker-compose.yml파일 수정(수정할 내용은 하단에 기재)
 
      ※ 아래 app_file2otsdb부분의 environment의 FIELDNAME, IDFIELD, TIMEFIELD는 꼭 파일에서 확인하고 입력 ※
 
@@ -127,7 +127,7 @@
                 - opentsdb:db
         ```
 
-###  4. docker-compose로 container 실행
+  4. docker-compose로 container 실행
 
         ```
         $ sudo docker-compose up -d # 모든 컨테이너 한번에 실행
