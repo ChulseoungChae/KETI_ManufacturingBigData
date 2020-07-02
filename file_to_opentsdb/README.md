@@ -13,13 +13,13 @@
       
   2. 윈도우
   
-   - docker/docker-compose 설치
+     - docker/docker-compose 설치
   
-     https://steemit.com/kr/@mystarlight/docker
+       https://steemit.com/kr/@mystarlight/docker
       
-   - 도커 툴박스 설치
+     - 도커 툴박스 설치
 
-     https://github.com/docker/toolbox/releases
+       https://github.com/docker/toolbox/releases
 
 ## 사용방법
   1. github repo clone 혹은 zip파일 다운로드
