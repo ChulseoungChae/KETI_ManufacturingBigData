@@ -137,6 +137,10 @@
         # 따로 실행
         $ sudo docker-compose up -d opentsdb # opentsdb 컨테이너 실행
         $ sudo docker-compose up -d app_file2otsdb # csv or xlsx data put 컨테이너 실행
+        
+        # 또는
+          docker-compose -f file_to_opentsdb/compose/docker-compose.yml up -d
+          
         ```   
       - opentsdb 구동이 완료될때 까지 start.sh에서 3초마다 응답확인 하면서 대기, 완료 응답이 오면 코드 실행시킴 (보통 1분 안에 opentsdb 구동 완료됨)
         - ![wait1](./image/wait1.png)
