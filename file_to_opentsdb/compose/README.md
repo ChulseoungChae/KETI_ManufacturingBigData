@@ -26,24 +26,24 @@
   
       - git clone
       
-            $ git clone https://github.com/ChulseoungChae/docker-compose.git
+            $ git clone https://github.com/ChulseoungChae/KETI_docker_sw.git
         
         or
       
       - 아래링크에서 zip파일 다운로드 후 압축해제, 원하는 디렉토리로 
       
-          [Link(https://github.com/ChulseoungChae/docker-compose/releases)](https://github.com/ChulseoungChae/docker-compose/releases)
+          [Link(https://github.com/ChulseoungChae/KETI_docker_sw/releases)](https://https://github.com/ChulseoungChae/KETI_docker_sw/releases)
       
   2. file_to_opentsdb compose 디렉토리로 이동
   
-            $ cd docker-compose/file_to_opentsdb/compose/
+            $ cd KETI_docker_sw/file_to_opentsdb/compose/
   
   
   3. docker-compose.yml파일 수정(수정할 내용은 하단에 기재)
 
-   ※ 아래 app_file2otsdb부분의 environment의 FIELDNAME, IDFIELD, TIMEFIELD는 꼭 파일에서 확인하고 입력 ※
+     ※ 아래 app_file2otsdb부분의 environment의 FIELDNAME, IDFIELD, TIMEFIELD는 꼭 파일에서 확인하고 입력 ※
 
-   - 필수 수정부분 설명
+     - 필수 수정부분 설명
         
         ```
         version: '3'
@@ -81,7 +81,7 @@
                 - opentsdb:db
         ```
         
-   - ex)
+     - ex)
         
         ```
         version: '3'
@@ -145,7 +145,7 @@
 
 ## 컨테이너 실행 후 로그 확인
     $ sudo docker logs -f file2otsdb_container  # windows or linux 환경
-    $ ./docker-compose/file_to_opentsdb/compose/view_logs.sh # linux 환경
+    $ bash view_logs.sh # linux 환경
     
 ## 코드 수정 및 수정한 코드 실행
     cd app_file2otsdb_volume/      # 디렉토리 이동
@@ -153,7 +153,7 @@
     docker ps –a                    # 컨테이너 Name 확인
 
     $ docker exec <컨테이너 name> bash /app/FILE2TSDB/this_run.sh   # windows or linux 환경
-    $ ./docker-compose/file_to_opentsdb/compose/file_input.sh # linux 환경
+    $ bash file_input.sh # linux 환경
 
 ## wget으로 opentsdb에 입력된 데이터 확인
   - opentsdb 웹 접속하여 데이터 조회한 화면
