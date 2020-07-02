@@ -1,0 +1,35 @@
+# Author : HojunJi
+
+version: '3'
+
+services: 
+    opentsdb:
+      image: petergrace/opentsdb-docker:latest
+      restart: always
+      ports:
+          - "60010:4242"
+      #environment:
+      #    - WAITSECS=30
+      container_name: opentsdb_container
+
+    app_file2otsdb:
+      image: jihoho/file_to_otsdb:v2
+      #container에 ssh 접속을 위해 로컬포트:컨테이너내부포트 포트포워딩
+      ports:
+        - "5004:22"
+      volumes:
+        - "./app_file2otsdb_volume:/app/FILE2TSDB/"
+        - "./files:/app/files"
+      environment:
+        - FIELDNAME=DRIVE_SPEED|DRIVE_LENGTH_TOTAL
+        - IDFIELD=PHONE_NUM
+        - TIMEFIELD=RECORD_TIME
+        - METRIC=csv_data
+        - PN=2
+        - CN=2
+      container_name: file2otsdb_container
+      # --link 옵션을 이용해 opentsdb container 와 link를 맺을 것을 설정한다. 
+      # 이렇게 설정하면, csv_to_opentsdb container 는 opentsdb container 를 IP 가 아닌 container의 이름을 이용해 통신할 수 있다.
+      # csv_to_opentsdb container의 /etc/hosts 파일에 opentsdb container의 IP 주소와 host명이 등록되어 있다.
+      links:
+        - opentsdb:db
