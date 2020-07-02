@@ -32,7 +32,7 @@
       
       - 아래링크에서 zip파일 다운로드 후 압축해제, 원하는 디렉토리 생성
       
-          [Link(https://github.com/ChulseoungChae/KETI_docker_sw/releases)](https://https://github.com/ChulseoungChae/KETI_docker_sw/releases)
+          [Link(https://github.com/ChulseoungChae/KETI_docker_sw/releases)](https://github.com/ChulseoungChae/KETI_docker_sw/releases)
           
         - 또는, wget으로 직접 다운로드후 압축해제
 
