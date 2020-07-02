@@ -131,6 +131,10 @@
       - opentsdb 구동이 완료될때 까지 start.sh에서 3초마다 응답확인 하면서 대기, 완료 응답이 오면 코드 실행시킴 (보통 1분 안에 opentsdb 구동 완료됨)
         - ![wait1](./image/wait1.png)
         - ![wait2](./image/wait2.png)
+           -- <pre> http://localhost:60010/#start=2020/01/01-00:00:00&end=2020/01/08-00:00:00&m=none:csv_data&o=&yrange=%5B0:%5D&wxh=600x500&style=linespoint </pre>
+             
+
+
         
 
   - file_to_opentsdb docker-compose 실행 화면
