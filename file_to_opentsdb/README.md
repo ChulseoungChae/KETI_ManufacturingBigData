@@ -32,7 +32,7 @@
       
       - 아래링크에서 zip파일 다운로드 후 압축해제, 원하는 디렉토리 생성
       
-          [Link(https://github.com/ChulseoungChae/KETI_docker_sw/releases)](https://github.com/ChulseoungChae/KETI_docker_sw/releases)
+          [Link (https://github.com/ChulseoungChae/KETI_docker_sw/releases)](https://github.com/ChulseoungChae/KETI_docker_sw/releases)
           
         - 또는, wget으로 직접 다운로드후 압축해제
 
@@ -141,12 +141,8 @@
       - opentsdb 구동이 완료될때 까지 start.sh에서 3초마다 응답확인 하면서 대기, 완료 응답이 오면 코드 실행시킴 (보통 1분 안에 opentsdb 구동 완료됨)
         - ![wait1](./image/wait1.png)
         - ![wait2](./image/wait2.png)
-           -- <pre> http://localhost:60010/#start=2020/01/01-00:00:00&end=2020/01/08-00:00:00&m=none:csv_data&o=&yrange=%5B0:%5D&wxh=600x500&style=linespoint </pre>
-             
-
-
-        
-       - 완료되면 아래 주소로 데이터 입력된 내용을 그래프로 확인할 수 있어야 함 
+                    
+       - opentsdb, app_file2otsdb 컨테이너 실행이 완료되면 아래 주소로 데이터 입력된 내용을 그래프로 확인할 수 있어야 함 
          - <pre> http://localhost:60010/#start=2020/01/01-00:00:00&end=2020/01/08-00:00:00&m=none:csv_data&o=&yrange=%5B0:%5D&wxh=600x500&style=linespoint </pre>
         
 
