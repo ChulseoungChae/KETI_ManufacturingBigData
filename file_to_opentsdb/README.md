@@ -41,9 +41,9 @@
   
   3. docker-compose.yml파일 수정(수정할 내용은 하단에 기재)
 
-   ※ 아래 app_file2otsdb부분의 environment의 FIELDNAME, IDFIELD, TIMEFIELD는 꼭 파일에서 확인하고 입력 ※
+     ※ 아래 app_file2otsdb부분의 environment의 FIELDNAME, IDFIELD, TIMEFIELD는 꼭 파일에서 확인하고 입력 ※
 
-   - 필수 수정부분 설명
+     - 필수 수정부분 설명
         
         ```
         version: '3'
@@ -81,7 +81,7 @@
                 - opentsdb:db
         ```
         
-   - ex)
+     - ex)
         
         ```
         version: '3'
