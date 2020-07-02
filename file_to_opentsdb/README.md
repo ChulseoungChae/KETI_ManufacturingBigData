@@ -37,9 +37,9 @@
         - 또는, wget으로 직접 다운로드후 압축해제
 
           <pre>
-            wget https://github.com/ChulseoungChae/KETI_docker_sw/releases/download/1/compose.zip
             mkdir mount_file
             cd mount_file
+            wget https://github.com/ChulseoungChae/KETI_docker_sw/releases/download/1/compose.zip
             unzip compose.zip </pre>
 
       
