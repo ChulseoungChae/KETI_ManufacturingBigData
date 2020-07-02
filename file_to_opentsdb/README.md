@@ -174,7 +174,7 @@
 ## wget으로 opentsdb에 입력된 데이터 확인
   - opentsdb 웹 접속하여 데이터 조회한 화면
 
-      http://192.168.99.100:60010/#start=2020/01/01-00:00:00&end=2020/01/08-00:00:00&m=none:csv_data&o=&yrange=%5B0:%5D&wxh=938x741&style=linespoint
+      http://localhost:60010/#start=2020/01/01-00:00:00&end=2020/01/08-00:00:00&m=none:csv_data&o=&yrange=%5B0:%5D&wxh=600x500&style=linespoint
 
       ![tsdb_wget_1](./image/wget_1.PNG)
 
