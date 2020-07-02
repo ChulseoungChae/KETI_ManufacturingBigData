@@ -30,9 +30,9 @@
         
         or
       
-      - 아래링크에서 zip파일 다운로드 후 압축해제, 원하는 디렉토리로 
+      - 아래링크에서 zip파일 다운로드 후 압축해제, 원하는 디렉토리로 압축해제
       
-          [Link(https://github.com/ChulseoungChae/KETI_docker_sw/releases)](https://https://github.com/ChulseoungChae/KETI_docker_sw/releases)
+          [Link(https://github.com/ChulseoungChae/KETI_docker_sw/releases)](https://github.com/ChulseoungChae/KETI_docker_sw/releases)
       
   2. file_to_opentsdb compose 디렉토리로 이동
   
