@@ -39,6 +39,7 @@
           <pre>
             wget https://github.com/ChulseoungChae/KETI_docker_sw/releases/download/1/compose.zip
             unzip compose.zip </pre>
+
       
   2. file_to_opentsdb compose 디렉토리로 이동
   
