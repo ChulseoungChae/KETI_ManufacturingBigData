@@ -184,7 +184,7 @@
 
     이 데이터를 리눅스터미널에서 wget을 이용하여 파일로 내려받을수 있다.
     
-        $ wget 'http://[ip]:[port]/api/query?start=[데이터 시작날짜]&end=[데이터 끝날짜]:00&m=none:[metric_name]&o=&yrange=%5B0:%5D&wxh=938x741&style=linespoint' -O filename.txt
+        $ wget 'http://[ip]:[port]/api/query?start=[데이터 시작날짜]&end=[데이터 끝날짜]:00&m=none:[metric_name]' -O filename.txt
         
   - 테스트 화면
       ![wget_result](./image/wget_3.PNG)
