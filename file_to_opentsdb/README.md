@@ -38,6 +38,8 @@
 
           <pre>
             wget https://github.com/ChulseoungChae/KETI_docker_sw/releases/download/1/compose.zip
+            mkdir mount_file
+            cd mount_file
             unzip compose.zip </pre>
 
       
