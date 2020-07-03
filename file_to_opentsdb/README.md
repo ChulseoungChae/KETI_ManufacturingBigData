@@ -70,8 +70,9 @@
               restart: always
               ports:
                   - "[웹접속을 위한 포트번호]:4242"
-              #environment:
-              #    - WAITSECS=30
+              # openTSDB의 hbase 볼륨과 로컬 볼륨을 마운트하여 openTSDB를 사용자가 종료하거나 에러가 나서 종료가 되어도 데이터가 보존되어 다시 실행 하여도 데이터 확인 가능
+              volumes:
+                  - "./opentsdb_volume:/data/hbase"
               container_name: opentsdb_container
 
             app_file2otsdb:
@@ -108,8 +109,8 @@
               restart: always
               ports:
                   - "60010:4242"
-              #environment:
-              #    - WAITSECS=30
+              volumes:
+                  - "./opentsdb_volume:/data/hbase"
               container_name: opentsdb_container
 
             app_file2otsdb:
