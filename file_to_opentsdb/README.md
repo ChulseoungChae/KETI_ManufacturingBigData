@@ -10,6 +10,9 @@
   - ![opentsdb](./image/structure2.png)
 
 ## 사전준비
+
+- Docker Desktop 및 docker-compose 실행 가능해야 함
+
   1.  리눅스/우분투 docker/docker-compose 설치
   
       https://hcnam.tistory.com/25
