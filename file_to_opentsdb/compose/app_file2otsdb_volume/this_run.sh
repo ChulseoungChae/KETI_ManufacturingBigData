@@ -7,8 +7,8 @@
 # read 할 csv 정보 및 opentsdb 정보
 
 # [1] target field name
-#field="DRIVE_SPEED|DRIVE_LENGTH_TOTAL"
-field=$FIELDNAME
+field="GPS_LAT|GPS_LONG"
+#field=$FIELDNAME
 # [2] time field name
 #ts="RECORD_TIME"
 ts=$TIMEFIELD

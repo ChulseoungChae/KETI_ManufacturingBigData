@@ -146,14 +146,6 @@
 ## 컨테이너 실행 후 로그 확인
     $ sudo docker logs -f file2otsdb_container  # windows or linux 환경
     $ bash view_logs.sh # linux 환경
-    
-## 코드 수정 및 수정한 코드 실행
-    cd app_file2otsdb_volume/      # 디렉토리 이동
-    vim this_run.sh                # 코드 수정
-    docker ps –a                    # 컨테이너 Name 확인
-
-    $ docker exec <컨테이너 name> bash /app/FILE2TSDB/this_run.sh   # windows or linux 환경
-    $ bash file_input.sh # linux 환경
 
 ## wget으로 opentsdb에 입력된 데이터 확인
   - opentsdb 웹 접속하여 데이터 조회한 화면
@@ -172,3 +164,30 @@
         
   - 테스트 화면
       ![wget_result](./image/wget_3.PNG)
+
+    
+## 코드 수정 및 수정한 코드 실행(tsdb에 입력된 field이외에 다른 field를 추가로 입력할 때)
+  1. 공유 디렉토리로 이동
+  
+         $ cd /KETI_docker_sw/file_to_opentsdb/compose/app_file2otsdb_volume
+
+     ![1](./image/1.png)
+
+  2. code editor로 field name 변경(아래사진은 VScode editor사용)
+
+     ![2](./image/2.png)
+
+  
+  3. 수정한 코드가 적용된 docker container 재실행
+
+         $ docker exec <컨테이너 name> bash /app/FILE2TSDB/this_run.sh   # windows or linux 환경
+         $ bash file_input.sh # linux 환경
+
+     ![3](./image/3.png)    
+
+
+  4. opentsdb 웹에서 확인
+
+     http://localhost:60010/#start=2020/01/01-00:00:00&end=2020/01/08-00:00:00&m=none:csv_data&o=&wxh=900x600&style=linespoint
+
+     ![4](./image/4.png)  
