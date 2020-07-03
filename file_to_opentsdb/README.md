@@ -24,7 +24,7 @@
 
        https://github.com/docker/toolbox/releases
 
-## 사용방법
+## 설치 및 동작 테스트 
   1. github repo clone 혹은 zip파일 다운로드
   
       - git clone
