@@ -10,6 +10,8 @@ services:
           - "60010:4242"
       #environment:
       #    - WAITSECS=30
+      volumes:
+        - "./opentsdb_volume:/data/hbase"
       container_name: opentsdb_container
 
     app_file2otsdb:

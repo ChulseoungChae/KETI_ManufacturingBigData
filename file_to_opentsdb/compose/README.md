@@ -1,12 +1,18 @@
-# file_to_opentsdb
-
-특정 directory안의  csv, excel파일을 읽어 docker opentsdb container로 put하는 docker software
+# File_to_opentsdb (원본 데이터 OPEN TSDB 전송 및 저장)
+#### 개요
+- CSV, Excel 원본 측정/수집 데이터를 OpenTSDB 로 전송하여 저장하는 Docker Container 구조의 S/W
+- OpenTSDB로 입력하고자 하는 데이터는 (로컬호스트 파일시스템에 위치)  
+  - 전송, 저장을 위한 파일은 특정 directory안의 위치시킴
+  - csv, excel파일 read하여  docker opentsdb container로 put하는 python software
 
 ## file_to_tsdb 전체구조
 
   - ![opentsdb](./image/structure2.png)
 
 ## 사전준비
+
+- Docker Desktop 및 docker-compose 실행 가능해야 함
+
   1.  리눅스/우분투 docker/docker-compose 설치
   
       https://hcnam.tistory.com/25
@@ -21,7 +27,7 @@
 
        https://github.com/docker/toolbox/releases
 
-## 사용방법
+## 설치 및 동작 테스트 
   1. github repo clone 혹은 zip파일 다운로드
   
       - git clone
@@ -30,9 +36,18 @@
         
         or
       
-      - 아래링크에서 zip파일 다운로드 후 압축해제, 원하는 디렉토리로 
+      - 아래링크에서 zip파일 다운로드 후 압축해제, 원하는 디렉토리 생성
       
-          [Link(https://github.com/ChulseoungChae/KETI_docker_sw/releases)](https://https://github.com/ChulseoungChae/KETI_docker_sw/releases)
+          [Link (https://github.com/ChulseoungChae/KETI_docker_sw/releases)](https://github.com/ChulseoungChae/KETI_docker_sw/releases)
+          
+        - 또는, wget으로 직접 다운로드후 압축해제
+
+          <pre>
+            mkdir mount_file
+            cd mount_file
+            wget https://github.com/ChulseoungChae/KETI_docker_sw/releases/download/1/compose.zip
+            unzip compose.zip </pre>
+
       
   2. file_to_opentsdb compose 디렉토리로 이동
   
@@ -42,6 +57,7 @@
   3. docker-compose.yml파일 수정(수정할 내용은 하단에 기재)
 
      ※ 아래 app_file2otsdb부분의 environment의 FIELDNAME, IDFIELD, TIMEFIELD는 꼭 파일에서 확인하고 입력 ※
+
 
      - 필수 수정부분 설명
         
@@ -127,10 +143,20 @@
         # 따로 실행
         $ sudo docker-compose up -d opentsdb # opentsdb 컨테이너 실행
         $ sudo docker-compose up -d app_file2otsdb # csv or xlsx data put 컨테이너 실행
+        
+        # 또는
+          docker-compose -f file_to_opentsdb/compose/docker-compose.yml up -d
+          
         ```   
       - opentsdb 구동이 완료될때 까지 start.sh에서 3초마다 응답확인 하면서 대기, 완료 응답이 오면 코드 실행시킴 (보통 1분 안에 opentsdb 구동 완료됨)
         - ![wait1](./image/wait1.png)
         - ![wait2](./image/wait2.png)
+                    
+       - opentsdb, app_file2otsdb 컨테이너 실행이 완료되면 아래 주소로 데이터 입력된 내용을 그래프로 확인할 수 있어야 함 
+         - 웹브라우저로 확인할때 입력 URL
+           - <pre> http://localhost:60010/#start=2020/01/01-00:00:00&end=2020/01/08-00:00:00&m=none:csv_data&o=&yrange=%5B0:%5D&wxh=600x500&style=linespoint </pre>
+         - 터미널에서 CLI 로 확인하는 방법
+           - wget 'http://localhost:60010/api/query?start=2020/01/01-00:00:00&end=2020/01/08-00:00:00&m=none:csv_data' -O test.out.txt
         
 
   - file_to_opentsdb docker-compose 실행 화면
@@ -146,11 +172,12 @@
 ## 컨테이너 실행 후 로그 확인
     $ sudo docker logs -f file2otsdb_container  # windows or linux 환경
     $ bash view_logs.sh # linux 환경
+    
 
 ## wget으로 opentsdb에 입력된 데이터 확인
   - opentsdb 웹 접속하여 데이터 조회한 화면
 
-      http://192.168.99.100:60010/#start=2020/01/01-00:00:00&end=2020/01/08-00:00:00&m=none:csv_data&o=&yrange=%5B0:%5D&wxh=938x741&style=linespoint
+      http://localhost:60010/#start=2020/01/01-00:00:00&end=2020/01/08-00:00:00&m=none:csv_data&o=&yrange=%5B0:%5D&wxh=600x500&style=linespoint
 
       ![tsdb_wget_1](./image/wget_1.PNG)
 
@@ -160,12 +187,12 @@
 
     이 데이터를 리눅스터미널에서 wget을 이용하여 파일로 내려받을수 있다.
     
-        $ wget 'http://[ip]:[port]/api/query?start=[데이터 시작날짜]&end=[데이터 끝날짜]:00&m=none:[metric_name]&o=&yrange=%5B0:%5D&wxh=938x741&style=linespoint' -O filename.txt
+        $ wget 'http://[ip]:[port]/api/query?start=[데이터 시작날짜]&end=[데이터 끝날짜]:00&m=none:[metric_name]' -O filename.txt
         
   - 테스트 화면
       ![wget_result](./image/wget_3.PNG)
 
-    
+
 ## 코드 수정 및 수정한 코드 실행(tsdb에 입력된 field이외에 다른 field를 추가로 입력할 때)
   1. 공유 디렉토리로 이동
   
