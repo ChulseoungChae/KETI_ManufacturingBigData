@@ -6,7 +6,7 @@
 
 # read 할 csv 정보 및 opentsdb 정보
 
-# [1] target field name
+# [1] target field name , 2개 이상의 필드 입력할때 공란없이 붙여서 | 로 표시함 
 field="GPS_LAT|GPS_LONG"
 #field=$FIELDNAME
 # [2] time field name
