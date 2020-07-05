@@ -1,9 +1,10 @@
-# File_to_opentsdb (원본 데이터, CSV파일 및 Excel파일을 OPEN TSDB 컨테이너로 전송 및 저장)
+# File_to_opentsdb 리포
 #### 개요
 - CSV, Excel 원본 측정/수집 데이터를 OpenTSDB 로 전송하여 저장하는 Docker Container 구조의 S/W
 - OpenTSDB로 입력하고자 하는 데이터는 (로컬호스트 파일시스템에 위치)  
   - 전송, 저장을 위한 파일은 특정 directory안의 위치시킴
   - csv, excel파일 read하여  docker opentsdb container로 put하는 python software
+- 원본 데이터, CSV파일 및 Excel파일을 OPEN TSDB 컨테이너로 전송 및 저장
 
 ## file_to_tsdb 전체구조
 
