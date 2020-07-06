@@ -21,7 +21,7 @@ services:
         - "./app_file2otsdb_volume:/app/FILE2TSDB/"
         - "./files:/app/files"
       environment:
-        - FIELDNAME=DRIVE_SPEED|DRIVE_LENGTH_TOTAL
+        - FIELDNAME=FUEL_CONSUM_DAY|FUEL_CONSUM_TOTAL
         - IDFIELD=PHONE_NUM
         - TIMEFIELD=RECORD_TIME
         - METRIC=csv_data
