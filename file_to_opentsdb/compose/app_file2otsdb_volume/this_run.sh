@@ -6,7 +6,7 @@
 
 # read 할 csv 정보 및 opentsdb 정보
 
-# [1] target field name
+# [1] target field name, 2개 이상의 필드 입력할때 공란없이 붙여서 | 로 표시함 
 #field="DRIVE_SPEED|DRIVE_LENGTH_TOTAL"
 field=$FIELDNAME
 # [2] time field name
@@ -18,16 +18,16 @@ carid=$IDFIELD
 # [4] opentsdb metric
 #metric="test2"
 metric=$METRIC
-# [5] producer process count
+# [5] producer process count, SW 동작 내부에서 사용하는 변수
 #pn=2
 pn=$PN
-# [6] consumer process count
+# [6] consumer process count, SW 동작 내부에서 사용하는 변수
 #cn=2
 cn=$CN
 
 # [7] opentsdb ip
 ip=db
-#ip='125.140.110.217'
+#ip='125.140.110.xxx'
 # [8] opentsdb port
 port=4242
 #port=60010
