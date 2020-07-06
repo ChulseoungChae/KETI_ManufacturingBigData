@@ -64,6 +64,8 @@ def _produce(works_to_do_list, qidx, works_done, meta):
                     continue
                 elif value == 'NaN' or dftime[i] == 'NaN':
                     continue
+                elif math.isnan(value) == True or math.isnan(dftime[i]) == True:
+                    continue
                 ts = FILE2TSDB.convertTimeToEpoch(dftime[i])
                 ts = str(ts)
                 csv_data = dict()
