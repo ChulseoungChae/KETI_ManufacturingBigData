@@ -55,7 +55,7 @@
     1. ./01225797052.xlsx
        - time format : YYYY-MM-DD HH:MM:SS
        - 기간: 2019/06/02-00:00:00 ~ 2019/06.04-00:00:00
-     - number of rows  : 52395
+       - number of rows  : 52395
   
   2. ./01225797247.csv
   
