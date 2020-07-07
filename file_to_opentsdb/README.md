@@ -23,38 +23,96 @@
      - docker/docker-compose 설치
   
        https://steemit.com/kr/@mystarlight/docker
-      
+     
      - 도커 툴박스 설치
 
        https://github.com/docker/toolbox/releases
+  
+- csv, 엑셀 파일의 time format
+
+  - 초 단위의 경우 
+
+    - YYYY-MM-DD HH:MM:SS    ex) 2020-01-20 10:20:20
+    - YYYY-MM-DDTHH:MM:SSZ   ex) 2020-01-20T10:20:20Z
+
+  - millisecond의 경우 
+
+    - YYYY-MM-DD HH:MM:SS.sss  ex) 2020-01-20 10:20:20.001
+
+    - YYYY-MM-DDTHH:MM:SS.sss ex) 2020-01-20T10.20.20.001
+
+    - millisecond 데이터 확인(ms=true parameter 추가해야 밀리세컨드 단위로 쿼리 가능)
+
+      ```
+  $ wget 'http://[ip]:[port]/api/query?start=[데이터 시작날짜]&end=[데이터 끝날짜]:00&ms=true&m=none:[metric_name]' -O filename.txt
+      ```
+      
+      ![wget4](./image/wget_4.png)
+
+  - 파일 정보 (files디렉토리 하위 파일)
+
+    1. ./01225797052.xlsx
+       - time format : YYYY-MM-DD HH:MM:SS
+       - 기간: 2019/06/02-00:00:00 ~ 2019/06.04-00:00:00
+       - number of rows  : 52395
+
+    2. ./01225797247.csv
+
+       - time format : YYYY-MM-DD HH:MM:SS
+
+       - 기간: 2020/01/01-00:00:00 ~ 2020/01.08-00:00:00
+
+       - number of rows  : 122849
+
+    3. ./millisec_files/01225797225.csv
+
+       - time format : YYYY-MM-DDTHH:MM:SS.SSS
+
+       - 기간: 2019/12/01-10:00:00.001 ~ 2019/12.01-10:00:00.021
+
+       - row  : 21
+
+    4. ./millisec_files/01225797226.csv
+
+       - time format : YYYY-MM-DD HH:MM:SS.SSS
+
+       - 기간: 2019/12/01-10:20:01.001 ~ 2019/12.01-10:20:01.021
+
+       - row length : 21
+
+    
 
 ## 설치 및 동작 테스트 
+
   1. github repo clone 혹은 zip파일 다운로드
   
       - git clone
       
+      - 
+      
             $ git clone https://github.com/ChulseoungChae/KETI_docker_sw.git
+      
         
+      
         or
       
       - 아래링크에서 zip파일 다운로드 후 압축해제, 원하는 디렉토리 생성
-      
+
           [Link (https://github.com/ChulseoungChae/KETI_docker_sw/releases)](https://github.com/ChulseoungChae/KETI_docker_sw/releases)
           
         - 또는, wget으로 직접 다운로드후 압축해제
-
+      
           <pre>
-            mkdir mount_file
+      mkdir mount_file
             cd mount_file
             wget https://github.com/ChulseoungChae/KETI_docker_sw/releases/download/1/compose.zip
             unzip compose.zip </pre>
-
       
   2. file_to_opentsdb compose 디렉토리로 이동
   
             $ cd KETI_docker_sw/file_to_opentsdb/compose/
-  
-  
+
+
   3. docker-compose.yml파일 수정(수정할 내용은 하단에 기재)
 
      ※ 아래 app_file2otsdb부분의 environment의 FIELDNAME, IDFIELD, TIMEFIELD는 꼭 파일에서 확인하고 입력 ※
@@ -64,7 +122,7 @@
         
         ```
         version: '3'
-
+    
         services: 
             opentsdb:
               image: petergrace/opentsdb-docker:latest
@@ -75,7 +133,7 @@
               volumes:
                   - "./opentsdb_volume:/data/hbase"
               container_name: opentsdb_container
-
+    
             app_file2otsdb:
               image: jihoho/file_to_otsdb:v2
               #container에 ssh 접속을 위해 로컬포트:컨테이너내부포트 포트포워딩
@@ -103,7 +161,7 @@
         
         ```
         version: '3'
-
+    
         services: 
             opentsdb:
               image: petergrace/opentsdb-docker:latest
@@ -113,7 +171,7 @@
               volumes:
                   - "./opentsdb_volume:/data/hbase"
               container_name: opentsdb_container
-
+    
             app_file2otsdb:
               image: jihoho/file_to_otsdb:v2
               #container에 ssh 접속을 위해 로컬포트:컨테이너내부포트 포트포워딩
@@ -149,17 +207,19 @@
         # 또는
           docker-compose -f file_to_opentsdb/compose/docker-compose.yml up -d
           
-        ```   
+        ```
       - opentsdb 구동이 완료될때 까지 start.sh에서 3초마다 응답확인 하면서 대기, 완료 응답이 오면 코드 실행시킴 (보통 1분 안에 opentsdb 구동 완료됨)
         - ![wait1](./image/wait1.png)
         - ![wait2](./image/wait2.png)
-                    
+        
        - opentsdb, app_file2otsdb 컨테이너 실행이 완료되면 아래 주소로 데이터 입력된 내용을 그래프로 확인할 수 있어야 함 
          - 웹브라우저로 확인할때 입력 URL
+           
            - <pre> http://localhost:60010/#start=2020/01/01-00:00:00&end=2020/01/08-00:00:00&m=none:csv_data&o=&yrange=%5B0:%5D&wxh=600x500&style=linespoint </pre>
          - 터미널에서 CLI 로 확인하는 방법
+           
            - wget 'http://localhost:60010/api/query?start=2020/01/01-00:00:00&end=2020/01/08-00:00:00&m=none:csv_data' -O test.out.txt
-        
+      
 
   - file_to_opentsdb docker-compose 실행 화면
   
@@ -174,7 +234,7 @@
 ## 컨테이너 실행 후 로그 확인
     $ sudo docker logs -f file2otsdb_container  # windows or linux 환경
     $ bash view_logs.sh # linux 환경
-    
+
 
 ## wget으로 opentsdb에 입력된 데이터 확인
   - opentsdb 웹 접속하여 데이터 조회한 화면
@@ -190,7 +250,7 @@
     이 데이터를 리눅스터미널에서 wget을 이용하여 파일로 내려받을수 있다.
     
         $ wget 'http://[ip]:[port]/api/query?start=[데이터 시작날짜]&end=[데이터 끝날짜]:00&m=none:[metric_name]' -O filename.txt
-        
+    
   - 테스트 화면
       ![wget_result](./image/wget_3.PNG)
 
@@ -206,7 +266,7 @@
 
      ![2](./image/2.png)
 
-  
+
   3. 수정한 코드가 적용된 docker container 재실행
 
          $ docker exec <컨테이너 name> bash /app/FILE2TSDB/this_run.sh   # windows or linux 환경
