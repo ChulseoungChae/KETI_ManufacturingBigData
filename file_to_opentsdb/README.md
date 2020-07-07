@@ -44,8 +44,9 @@
     - millisecond 데이터 확인(ms=true parameter 추가해야 밀리세컨드 단위로 쿼리 가능)
 
   
-            $ wget 'http://[ip]:[port]/api/query?start=[데이터 시작날짜]&end=[데이터 끝날짜]:00&ms=true&m=none:[metric_name]' -O filename.txt
-            ex) wget 'http://localhost:60010/api/query?start=2019/12/01-00:00:00&end=2019/12/02-00:00:00&ms=true&m=none:csv_data' -O query.txt
+      <pre> $ wget 'http://[ip]:[port]/api/query?start=[데이터 시작날짜]&end=[데이터 끝날짜]:00&ms=true&m=none:[metric_name]' -O filename.txt </pre>
+            
+      <pre> ex) wget 'http://localhost:60010/api/query?start=2019/12/01-00:00:00&end=2019/12/02-00:00:00&ms=true&m=none:csv_data' -O query.txt </pre>
   
   
    ![wget4](./image/wget_4.png)
