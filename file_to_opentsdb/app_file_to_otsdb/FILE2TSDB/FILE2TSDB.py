@@ -14,15 +14,46 @@ import copy
 from datetime import datetime
 
 import pcs
+import re
 #출력 디렉토리 이름을 output으로 변경
 # Result, changed JSON 등 , output 디렉토리 하부에 저장
 # write 관련 함수는 모듈을 따로 파일로 만들면 좋을것같음
 
 ARG= 50 #argment
+'''
+    convert Time to Epoch
+'''
+def checkTimeFormat(_time):
+    # YYYY-MM-DD HH:MM:SS.SSS
+    patt1=re.compile("\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3}")
+    # YYYY-MM-DD HH:MM:SS
+    patt2=re.compile("\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}")
+    # YYYY-MM-DDTHH:MM:SS.SSS
+    patt3=re.compile("\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}")
+    # YYYYmmddHHMMSS
+    patt4 = re.compile("\d{14}")
 
-# convert Time to Epoch
+    # time format 확인 후 epoch로 convert
+    if patt1.match(_time):
+        # print("YYYY-MM-DD HH:MM:SS.SSS: ",_time)
+        epoch=convertMilliTimeToEpoch(_time)
+    elif patt2.match(_time):
+        # print("YYYY-MM-DD HH:MM:SS: ",_time)
+        epoch=convertTimeToEpoch(_time)
+    elif patt3.match(_time):
+        # print("YYYY-MM-DDTHH:MM:SS.SSS: ",_time)
+        epoch=convertMilliTimeToEpoch_v2(_time)
+    elif patt4.match(_time):
+        # print("YYYYmmddHHMMSS: ",_time)
+        epoch=convertTimeToEpoch_v2(_time)
+    else:
+        print("unusable time format!!")
+        sys.exit(1)
+    return epoch
+
+# YYYY-mm-dd HH:MM:SS -> epoch
 def convertTimeToEpoch(_time):
-    date_time = "%s.%s.%s %s:%s:%s" %(_time[8:10], _time[5:7], _time[:4], _time[11:13], _time[14:16], _time[17:])
+    date_time = "%s.%s.%s %s:%s:%s" %(_time[8:10], _time[5:7], _time[:4], _time[11:13], _time[14:16], _time[17:19])
     pattern = "%d.%m.%Y %H:%M:%S"
     epoch = int (time.mktime(time.strptime(date_time, pattern)))
     return epoch
@@ -33,6 +64,27 @@ def convertTimeToEpoch_v2(_time):
     date_time = "%s.%s.%s %s:%s:%s" %(_time[6:8], _time[4:6], _time[:4], _time[8:10], _time[10:12], _time[12:])
     pattern = "%d.%m.%Y %H:%M:%S"
     epoch = int (time.mktime(time.strptime(date_time, pattern)))
+    return epoch
+
+# YYYY-MM-DD HH:MM:SS.SSS ->epoch
+def convertMilliTimeToEpoch(_time):
+    date_time = "%s.%s.%s %s:%s:%s.%s" %(_time[8:10], _time[5:7], _time[:4], _time[11:13], _time[14:16], _time[17:19],_time[20:23])
+    pattern = "%d.%m.%Y %H:%M:%S.%f"
+    print(date_time)
+    dt=datetime.strptime(date_time,pattern)
+    _ut = datetime.utcfromtimestamp(0)
+    delta=dt-_ut
+    epoch=int(delta.total_seconds() * 1000)
+    return epoch
+
+# YYYY-MM-DDTHH:MM:SS.SSS ->epoch
+def convertMilliTimeToEpoch_v2(_time):
+    date_time = "%s.%s.%s %s:%s:%s,%s" %(_time[8:10], _time[5:7], _time[:4], _time[11:13], _time[14:16], _time[17:19],_time[20:23])
+    pattern = "%d.%m.%Y %H:%M:%S,%f"
+    dt=datetime.strptime(date_time,pattern)
+    _ut = datetime.utcfromtimestamp(0)
+    delta = dt - _ut
+    epoch = int(delta.total_seconds() * 1000)
     return epoch
 
 def file2df(_filename, _field, _ts, _carid):
