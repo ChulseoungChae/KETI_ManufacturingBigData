@@ -43,11 +43,11 @@
 
     - millisecond 데이터 확인(ms=true parameter 추가해야 밀리세컨드 단위로 쿼리 가능)
 
-      ```
-  $ wget 'http://[ip]:[port]/api/query?start=[데이터 시작날짜]&end=[데이터 끝날짜]:00&ms=true&m=none:[metric_name]' -O filename.txt
-      ```
-      
-      ![wget4](./image/wget_4.png)
+    
+            $ wget 'http://[ip]:[port]/api/query?start=[데이터 시작날짜]&end=[데이터 끝날짜]:00&ms=true&m=none:[metric_name]' -O filename.txt
+        
+  
+     ![wget4](./image/wget_4.png)
 
   - 파일 정보 (files디렉토리 하위 파일)
 
