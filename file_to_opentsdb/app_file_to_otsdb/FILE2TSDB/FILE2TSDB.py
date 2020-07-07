@@ -70,7 +70,6 @@ def convertTimeToEpoch_v2(_time):
 def convertMilliTimeToEpoch(_time):
     date_time = "%s.%s.%s %s:%s:%s.%s" %(_time[8:10], _time[5:7], _time[:4], _time[11:13], _time[14:16], _time[17:19],_time[20:23])
     pattern = "%d.%m.%Y %H:%M:%S.%f"
-    print(date_time)
     dt=datetime.strptime(date_time,pattern)
     _ut = datetime.utcfromtimestamp(0)
     delta=dt-_ut
@@ -133,13 +132,12 @@ def recursive_search_dir(_nowDir, _filelist):
 
     for fname in f_list:
         file_extension = os.path.splitext(fname)[1]
-        #print(file_extension)
-
+        # print(file_extension)
         if file_extension ==  '.csv' or file_extension == '.CSV' : # csv
             _idx = -4
         elif file_extension ==  '.xlsx' or file_extension == '.XLSX' : # excel
             _idx = -5
-        else: continue
+        else: pass
 
         if os.path.isdir(_nowDir+'/'+fname):
             dir_list.append(_nowDir+'/'+fname)
@@ -189,6 +187,7 @@ if __name__ == "__main__":
         #print(os.path.splitext(f)[1])
 
     print("\n--------------------------------------------------\n")
+
     meta = pack_to_meta(field, ts, carid, metric, pn, cn, ip, port)
 
     # 서브 프로세스 관리자, 생산자, 소비자 생성
