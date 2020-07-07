@@ -43,43 +43,44 @@
 
     - millisecond 데이터 확인(ms=true parameter 추가해야 밀리세컨드 단위로 쿼리 가능)
 
-    
-            $ wget 'http://[ip]:[port]/api/query?start=[데이터 시작날짜]&end=[데이터 끝날짜]:00&ms=true&m=none:[metric_name]' -O filename.txt
-        
   
-     ![wget4](./image/wget_4.png)
-
-  - 파일 정보 (files디렉토리 하위 파일)
-
+            $ wget 'http://[ip]:[port]/api/query?start=[데이터 시작날짜]&end=[데이터 끝날짜]:00&ms=true&m=none:[metric_name]' -O filename.txt
+            ex) wget 'http://localhost:60010/api/query?start=2019/12/01-00:00:00&end=2019/12/02-00:00:00&ms=true&m=none:csv_data' -O query.txt
+  
+  
+   ![wget4](./image/wget_4.png)
+  
+- 파일 정보 (files디렉토리 하위 파일)
+  
     1. ./01225797052.xlsx
        - time format : YYYY-MM-DD HH:MM:SS
        - 기간: 2019/06/02-00:00:00 ~ 2019/06.04-00:00:00
-       - number of rows  : 52395
-
-    2. ./01225797247.csv
-
-       - time format : YYYY-MM-DD HH:MM:SS
-
-       - 기간: 2020/01/01-00:00:00 ~ 2020/01.08-00:00:00
-
-       - number of rows  : 122849
-
-    3. ./millisec_files/01225797225.csv
-
-       - time format : YYYY-MM-DDTHH:MM:SS.SSS
-
-       - 기간: 2019/12/01-10:00:00.001 ~ 2019/12.01-10:00:00.021
-
-       - row  : 21
-
-    4. ./millisec_files/01225797226.csv
-
-       - time format : YYYY-MM-DD HH:MM:SS.SSS
-
-       - 기간: 2019/12/01-10:20:01.001 ~ 2019/12.01-10:20:01.021
-
-       - row length : 21
-
+     - number of rows  : 52395
+  
+  2. ./01225797247.csv
+  
+     - time format : YYYY-MM-DD HH:MM:SS
+  
+     - 기간: 2020/01/01-00:00:00 ~ 2020/01.08-00:00:00
+  
+     - number of rows  : 122849
+  
+  3. ./millisec_files/01225797225.csv
+  
+     - time format : YYYY-MM-DDTHH:MM:SS.SSS
+  
+     - 기간: 2019/12/01-10:00:00.001 ~ 2019/12.01-10:00:00.021
+  
+     - number of rows  : 21
+  
+  4. ./millisec_files/01225797226.csv
+  
+     - time format : YYYY-MM-DD HH:MM:SS.SSS
+  
+     - 기간: 2019/12/01-10:20:01.001 ~ 2019/12.01-10:20:01.021
+  
+     - number of rows : 21
+  
     
 
 ## 설치 및 동작 테스트 
