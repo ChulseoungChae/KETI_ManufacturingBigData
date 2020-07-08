@@ -30,15 +30,15 @@
   
 - csv, 엑셀 파일의 time format 및 openTSDB millisecond timestamp query
 
-  - 초 단위의 경우 
+  - 초 단위의 경우 time format 
 
     - YYYY-MM-DD HH:MM:SS    ex) 2020-01-20 10:20:20
     - YYYY-MM-DDTHH:MM:SSZ   ex) 2020-01-20T10:20:20Z
 
-  - millisecond의 경우 
+  - millisecond의 경우 time format
 
     - YYYY-MM-DD HH:MM:SS.sss  ex) 2020-01-20 10:20:20.001
-  - YYYY-MM-DDTHH:MM:SS.sss ex) 2020-01-20T10.20.20.001
+    - YYYY-MM-DDTHH:MM:SS.sss ex) 2020-01-20T10.20.20.001
 
   - openTSDB millisecond query
     - query 시 Requests parameter 중 msResolution(or ms )값을 true로 설정하여함
