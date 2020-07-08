@@ -28,7 +28,7 @@
 
        https://github.com/docker/toolbox/releases
   
-- csv, 엑셀 파일의 time format
+- csv, 엑셀 파일의 time format 및 openTSDB millisecond timestamp query
 
   - 초 단위의 경우 
 
@@ -38,26 +38,52 @@
   - millisecond의 경우 
 
     - YYYY-MM-DD HH:MM:SS.sss  ex) 2020-01-20 10:20:20.001
+  - YYYY-MM-DDTHH:MM:SS.sss ex) 2020-01-20T10.20.20.001
 
-    - YYYY-MM-DDTHH:MM:SS.sss ex) 2020-01-20T10.20.20.001
+  - openTSDB millisecond query
+    - query 시 Requests parameter 중 msResolution(or ms )값을 true로 설정하여함
 
-    - millisecond 데이터 확인(ms=true parameter 추가해야 밀리세컨드 단위로 쿼리 가능)
+  | Name                      | Data Type | Required | Description                                                  | Default | QS   | RW   | Example |
+  | :------------------------ | :-------- | :------- | :----------------------------------------------------------- | :------ | :--- | :--- | :-----: |
+  | msResolution<br />(or ms) | Boolean   | Optional | 데이터 포인트 타임 스탬프를 밀리 초 또는 초 단위로 출력할지 여부. msResolution 플래그가 권장됨. 이 플래그가 제공되지 않고 1 초 내에 여러 데이터 포인트가있는 경우 해당 데이터 포인트는 쿼리 집계 함수를 사용하여 다운 샘플링 됨 | false   | ms   |      |  true   |
 
-  
-      <pre> $ wget 'http://[ip]:[port]/api/query?start=[데이터 시작날짜]&end=[데이터 끝날짜]:00&ms=true&m=none:[metric_name]' -O filename.txt </pre>
-            
-      <pre> ex) wget 'http://localhost:60010/api/query?start=2019/12/01-00:00:00&end=2019/12/02-00:00:00&ms=true&m=none:csv_data' -O query.txt </pre>
-  
-  
-   ![wget4](./image/wget_4.png)
-  
+  [참조 링크]( http://opentsdb.net/docs/build/html/api_http/query/index.html)
+
+  - msResolution(ms) 값을 true로 설정하지 않을 경우(default: false)
+
+    ~~~bash
+    $ wget 'http://[ip]:[port]/api/query?start=[데이터 시작날짜]&end=[데이터 끝날짜]:00&m=none:[metric_name]' -O filename.txt
+    ~~~
+
+    ~~~bash
+    ex) wget 'http://localhost:60010/api/query?start=2019/12/01-00:00:00&end=2019/12/02-00:00:00&m=none:csv_data' -O query.txt 
+    ~~~
+
+    - 초 단위의 timestamp인 10자리가 출력이 됨
+
+    ![wget4](./image/wget_5.png)
+
+  - msResolution(ms) 값을 true로 설정했을 경우
+
+    ~~~bash
+    $ wget 'http://[ip]:[port]/api/query?start=[데이터 시작날짜]&end=[데이터 끝날짜]:00&ms=true&m=none:[metric_name]' -O filename.txt
+    ~~~
+
+    ~~~bash
+    ex) wget 'http://localhost:60010/api/query?start=2019/12/01-00:00:00&end=2019/12/02-00:00:00&ms=true&m=none:csv_data' -O query.txt 
+    ~~~
+
+    - 밀리 초 단위의 timestamp인 13자리가 출력이 됨
+
+    ![wget4](./image/wget_4.png)
+
 - 파일 정보 (files디렉토리 하위 파일)
   
     1. ./01225797052.xlsx
        - time format : YYYY-MM-DD HH:MM:SS
        - 기간: 2019/06/02-00:00:00 ~ 2019/06.04-00:00:00
        - number of rows  : 52395
-  
+    
   2. ./01225797247.csv
   
      - time format : YYYY-MM-DD HH:MM:SS
@@ -90,18 +116,16 @@
   
       - git clone
       
-      - 
+          ```
+          $ git clone https://github.com/ChulseoungChae/KETI_docker_sw.git
+          ```
       
-            $ git clone https://github.com/ChulseoungChae/KETI_docker_sw.git
-      
-        
-      
-        or
+          or
       
       - 아래링크에서 zip파일 다운로드 후 압축해제, 원하는 디렉토리 생성
-
+      
           [Link (https://github.com/ChulseoungChae/KETI_docker_sw/releases)](https://github.com/ChulseoungChae/KETI_docker_sw/releases)
-          
+    
         - 또는, wget으로 직접 다운로드후 압축해제
       
           <pre>
