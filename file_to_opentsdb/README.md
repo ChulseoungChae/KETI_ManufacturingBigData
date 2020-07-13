@@ -1,4 +1,4 @@
-# File(CSV,Excel)_to_openTSDB 리포
+# File(CSV,Excel) 을 openTSDB 컨테이너 저장 기능 구현 리포
 #### 개요
 - CSV, Excel 원본 측정/수집 데이터를 OpenTSDB 로 전송하여 저장하는 Docker Container 구조의 S/W
 - OpenTSDB로 입력하고자 하는 데이터는 (로컬호스트 파일시스템에 위치)  
