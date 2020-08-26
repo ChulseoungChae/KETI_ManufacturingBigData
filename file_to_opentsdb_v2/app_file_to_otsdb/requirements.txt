@@ -1,0 +1,6 @@
+requests
+multiprocessing
+importlib
+scandir
+pandas
+xlrd
