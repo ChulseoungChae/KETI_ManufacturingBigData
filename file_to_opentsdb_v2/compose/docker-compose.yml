@@ -7,7 +7,7 @@ services:
        image: goo99999/flask_app
        # docker container 내부의 웹 접속을 위한 로컬포트:컨테이너내부포트 포트포워딩
        ports:
-         - "60010:5003"
+         - "60080:5003"
        volumes:
          - "./files:/app/files"
        container_name: file2otsdb_container
