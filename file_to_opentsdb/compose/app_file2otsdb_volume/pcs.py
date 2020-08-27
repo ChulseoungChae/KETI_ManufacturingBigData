@@ -16,6 +16,12 @@ import math
 import keti_multiprocessing
 import FILE2TSDB
 
+def isnan(value):
+    try:
+        return math.isnan(float(value))
+    except:
+        return False
+
 # df -> json buffer 
 def _produce(works_to_do_list, qidx, works_done, meta):
     print('Producer %d Start Work\n' %os.getpid())
@@ -65,9 +71,9 @@ def _produce(works_to_do_list, qidx, works_done, meta):
                     continue
                 elif value == 'NaN' or dftime[i] == 'NaN':
                     continue
-                elif math.isnan(value) == True or math.isnan(dftime[i]) == True:
+                elif isnan(value) == True or isnan(dftime[i]) == True:
                     continue
-                ts = FILE2TSDB.convertTimeToEpoch(dftime[i])
+                ts = FILE2TSDB.checkTimeFormat(dftime[i])
                 ts = str(ts)
                 csv_data = dict()
                 csv_data['metric'] = str(meta['metric'])

@@ -13,7 +13,7 @@ services:
       container_name: opentsdb_container
 
     app_file2otsdb:
-      image: jihoho/file_to_otsdb:v3
+      image: jihoho/file_to_otsdb:v4
       #container에 ssh 접속을 위해 로컬포트:컨테이너내부포트 포트포워딩
       ports:
         - "5004:22"

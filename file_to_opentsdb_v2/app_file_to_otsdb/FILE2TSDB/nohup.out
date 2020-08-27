@@ -1,0 +1,30 @@
+[INFO|recursive_search_dir] [2020-08-14 13:16:59,785] [loop] recursive searching ../files
+[INFO|<module>] [2020-08-14 13:16:59,787] --------------------file list--------------------
+[INFO|<module>] [2020-08-14 13:16:59,787] file: ../files/01225797052.xlsx   size: 7.757 (MB)
+[INFO|<module>] [2020-08-14 13:16:59,787] file: ../files/01225797247.csv   size: 29.360 (MB)
+[INFO|<module>] [2020-08-14 13:16:59,788] file: ../files/ms_01225797226.csv   size: 0.004 (MB)
+[INFO|<module>] [2020-08-14 13:16:59,788] --------------------------------------------------
+[INFO|start_work] [2020-08-14 13:17:00,034] 멀티 프로세스 생성 완료 및 작업 시작..
+[INFO|_produce] [2020-08-14 13:17:00,041] 데이터 처리 프로세스 (PID : 6006) Start Work
+[INFO|_consume] [2020-08-14 13:17:00,047] DB전송 프로세스 (PID : 6012) Start Work
+[INFO|recursive_search_dir] [2020-08-14 13:18:02,855] [loop] recursive searching ../files
+[INFO|<module>] [2020-08-14 13:18:02,857] --------------------file list--------------------
+[INFO|<module>] [2020-08-14 13:18:02,857] file: ../files/01225797052.xlsx   size: 7.757 (MB)
+[INFO|<module>] [2020-08-14 13:18:02,858] file: ../files/01225797247.csv   size: 29.360 (MB)
+[INFO|<module>] [2020-08-14 13:18:02,858] file: ../files/ms_01225797226.csv   size: 0.004 (MB)
+[INFO|<module>] [2020-08-14 13:18:02,858] --------------------------------------------------
+[INFO|start_work] [2020-08-14 13:18:03,062] 멀티 프로세스 생성 완료 및 작업 시작..
+[INFO|_produce] [2020-08-14 13:18:03,075] 데이터 처리 프로세스 (PID : 6083) Start Work
+[INFO|_consume] [2020-08-14 13:18:03,080] DB전송 프로세스 (PID : 6089) Start Work
+[INFO|file2df] [2020-08-14 13:18:23,976] 메인 프로세스 : ../files/01225797052.xlsx read 완료 (DataFrame length: 52369)
+[INFO|_produce] [2020-08-14 13:18:24,169] 데이터 처리 프로세스 (PID: 6083)  Fieldname: RPM, length: 52369 처리중..
+[INFO|file2df] [2020-08-14 13:18:24,468] 메인 프로세스 : ../files/01225797247.csv read 완료 (DataFrame length: 122850)
+[INFO|file2df] [2020-08-14 13:18:24,727] 메인 프로세스 : ../files/ms_01225797226.csv read 완료 (DataFrame length: 21)
+[INFO|<module>] [2020-08-14 13:18:24,762] 메인 프로세스 작업 완료
+[INFO|<module>] [2020-08-14 13:18:24,762] subprocess가 아직 실행 중 입니다...
+[Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [INFO|_produce] [2020-08-14 13:18:39,626] 데이터 처리 프로세스 (PID: 6083)  Fieldname: RPM, length: 122850 처리중..
+[Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [Put Json to OpenTSDB]PID: 6089 Queue Size 0 [INFO|_produce] [2020-08-14 13:19:20,077] 데이터 처리 프로세스 (PID: 6083)  Fieldname: RPM, length: 21 처리중..
+[INFO|_produce] [2020-08-14 13:19:20,086] 데이터 처리 프로세스 (PID : 6083) 정상 종료
+[Put Json to OpenTSDB]PID: 6089 Queue Size 0 [INFO|_consume] [2020-08-14 13:19:20,152] DB 전송 프로세스 (PID : 6089) 정상 종료
+[INFO|<module>] [2020-08-14 13:19:20,216] total run time : 77.153346
+[INFO|<module>] [2020-08-14 13:19:20,216] total processed lines : 175240
