@@ -13,13 +13,13 @@ services:
       container_name: opentsdb_container
 
     app_file2otsdb:
-      image: jihoho/file_to_otsdb:v4
+      image: jihoho/file_to_otsdb:v3
       #container에 ssh 접속을 위해 로컬포트:컨테이너내부포트 포트포워딩
       ports:
         - "5004:22"
       volumes:
         - "./app_file2otsdb_volume:/app/FILE2TSDB/"
-        - "./files:/app/files"
+        - "./files_volume:/app/files"
       environment:
         - FIELDNAME=FUEL_CONSUM_DAY|FUEL_CONSUM_TOTAL
         - IDFIELD=PHONE_NUM
