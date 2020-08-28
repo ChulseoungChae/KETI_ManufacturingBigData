@@ -9,5 +9,5 @@ services:
        ports:
          - "60080:5003"
        volumes:
-         - "./files:/app/files"
+         - "./files_volume:/app/files"
        container_name: file2otsdb_container
