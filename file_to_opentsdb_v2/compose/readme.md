@@ -109,7 +109,7 @@
 
 ## 웹 화면 각 파마리터 설명
 
-  - ![param](./imgae/param.png) 
+  - ![param](./image/param.png) 
  
   - IP
     - 데이터를 입력할 OpenTSDB의 url의  ip주소이다. 하나마이크론 서버의 TSDB에 입력할것이기 때문에 210.181.49.152를 입력하면 된다.
