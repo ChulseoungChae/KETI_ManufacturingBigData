@@ -104,6 +104,23 @@
         위 화면에서 각각의 인자값들을 기입하고 EXEC버튼을 누르면 공유폴더 이하의 파일들을 읽어 다른 축적서버의 OpenTSDB에 데이터를 입력하는 작업이 실행되고, 아래 사진과같이 로그를 실시간 확인할 수 있는 화면이 나타나서 작동 확인 가능.
 
        ![로그화면](./image/result.PNG)
+  
+  #### ※ 인자값들을 웹 페이지에 입력하지않고 shellscript로 실행할 경우
+
+   1. 위 내용의 [4]번 부분 docker-compose 실행
+
+   2. /KETI_docker_sw/file_to_opentsdb/compose/flask_app_volume 디렉토리 내부의 this_run.sh 수정(각 인자값들의 설명은 아래 [웹화면 각 파라미터 설명]에 기재함)
+
+       ![shell](./image/shell.png)
+  
+   3. /KETI_docker_sw/file_to_opentsdb/compose 디렉토리에서 start_sh.sh 실행 혹은 명령어 직접 입력
+     
+          $sh start_sh.sh
+
+      혹은
+
+          $ docker exec file2otsdb_container bash /app/FILE2TSDB/this_run.sh
+          
        
 ----
 
