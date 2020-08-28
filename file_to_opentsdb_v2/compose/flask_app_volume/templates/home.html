@@ -1,0 +1,59 @@
+<!-- CSS -->
+<link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet">
+<div class="wrapper fadeInDown">
+  <header>
+    <div class="container">
+      <h1 class="logo">KETI</h1>
+    </div>
+  </header> 
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    
+    <h2 class="active"> Information </h2>
+
+    
+    <!-- Icon -->
+    <!--
+    <div class="fadeIn first">
+      <img src="" id="icon" alt="User Icon" />
+    </div>
+    -->
+
+    <!-- Input Form -->
+    <form method="GET" action="/result">
+      <label for="ip"> IP </label>
+      <input type="text" id="ip" class="fadeIn second" name="ip" placeholder="XXX.XXX.XXX.XXX">
+      <label for="port"> PORT </label>
+      <input type="text" id="port" class="fadeIn third" name="port" placeholder="XXXX">
+      <label for="field"> INPUT FIELDNAME </label>
+      <input type="text" id="field" class="fadeIn third" name="field" placeholder="Sensor1|Sensor2|Sensor3...">
+      <label for="timefield"> TIMEFIELD </label>
+      <input type="text" id="timefield" class="fadeIn third" name="timefield" placeholder="Time Cloumn Name">
+      <label for="idfield"> IDFIELD </label>
+      <input type="text" id="idfield" class="fadeIn third" name="idfield" placeholder="ID Cloumn Name">
+      <label for="metric"> METRIC NAME </label>
+      <input type="text" id="metric" class="fadeIn third" name="metric" placeholder="keti">
+      <input type="submit" class="fadeIn fourth" value="Exec">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <!--
+      <a class="underlineHover" href="#">Status</a>
+      -->
+      <p>
+        {% if result == None %}
+            <h5> 인자값 전달 및 실행 전입니다. </h5>
+        {% else %}
+            <h5>  인자값을 전달했습니다. </h5>
+            <!--
+            <p>
+                <h5> result : {{result}} </h5>
+            </p>
+            -->
+        {% endif %}
+      </p>
+    </div>
+
+  </div>
+</div>

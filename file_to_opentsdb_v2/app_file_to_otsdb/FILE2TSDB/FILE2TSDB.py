@@ -121,6 +121,11 @@ def file2df(_filename, _field, _ts, _id):
 
 def pack_to_meta(field, ts, _id, metric, pn, cn, ip,port):
     ret = {}
+    '''
+    field = field[1:-1]
+    ts = ts[1:-1]
+    _id = _id[1:-1]
+    '''
     ret['field']=field.split('|')
     ret['timestamp']=ts
     ret['id']=_id
@@ -188,9 +193,9 @@ if __name__ == "__main__":
     logger= logs.get_logger()
 
     ip,port,field,ts,_id,metric=brush_args()
-    pn = 1
-    cn = 1
-    file_dir='../files'
+    pn = 2
+    cn = 2
+    file_dir='../files_volume'
     file_list=[]
 
     recursive_search_dir(file_dir, file_list)

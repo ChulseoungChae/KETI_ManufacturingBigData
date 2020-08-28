@@ -61,6 +61,7 @@ def _produce(works_to_do_list, qidx, works_done, meta):
         for _field in meta['field']:
             logger.info("데이터 처리 프로세스 (PID: %d)  Fieldname: %s, length: %d 처리중.." % (os.getpid(), _field, len(_list)))
             #print("\n\n[Converting Dataframe to OpenTsdb json type] PID: %d  Fieldname: %s DataFrame length: %d" % (os.getpid(), _field, len(_list)))
+            
             if meta['id'] != "none":
                 _id = str(_list[meta['id']].iloc[0])
             dftime = _list[meta['timestamp']].tolist()
@@ -69,7 +70,7 @@ def _produce(works_to_do_list, qidx, works_done, meta):
             data_len = len(_list)
             totallines+=data_len
             _buffer = []
-
+            
             for i in range(len(dftime)):
                 value = dfval[i]
 
@@ -80,8 +81,11 @@ def _produce(works_to_do_list, qidx, works_done, meta):
                     continue
                 elif isnan(value) == True or isnan(dftime[i]) == True:
                     continue
+                #print(type(dftime[i]))
                 ts = FILE2TSDB.checkTimeFormat(dftime[i])
+                
                 ts = str(ts)
+                
                 csv_data = dict()
                 csv_data['metric'] = str(meta['metric'])
                 csv_data["tags"] = dict()
@@ -99,7 +103,7 @@ def _produce(works_to_do_list, qidx, works_done, meta):
                         time.sleep(1)
                     works_done.put(copy.deepcopy(_buffer))
                     _buffer=[]
-
+            
             if len(_buffer) != 0:
                 while (works_done.full()):
                     time.sleep(1)
