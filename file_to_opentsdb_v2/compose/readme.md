@@ -64,31 +64,34 @@
   1. github repo clone 혹은 zip파일 다운로드
   
       - git clone
-      
-            ※ 배포용 github레포 주소에 맞게 수정할 예정
-            $ git clone https://github.com/.git
+
+            $ git clone https://github.com/ChulseoungChae/KETI_docker_sw.git
         
         or
       
       - 아래링크에서 원하는 디렉토리로 zip파일 다운로드 후 압축해제
 
-          ※ 배포용 github레포 주소에 맞게 수정할 예정      
-          [Link(https://github.com/releases)](https://github.com/releases)
+          [Link(https://github.com/ChulseoungChae/KETI_docker_sw/releases)](https://github.com/ChulseoungChae/KETI_docker_sw/releases
+)
       
   2. compose 디렉토리 이동 및 docker-compose.yml 파일 수정
 
         - compose 디렉토리로 이동
 
-              ※ 배포용 github레포 주소에 맞게 수정할 예정
-              $ cd /compose 
+              $ cd KETI_docker_sw/file_to_opentsdb_v2/compose/ 
 
         - docker-compose.yml 파일에서 웹 접속할 포트번호 수정
           -  아래사진의 빨간네모박스 부분은 docker container 내부의 웹 포트를 로컬에서 접속할 웹 포트와 매칭시켜주는 것이다. 오른쪽 번호가 docker container 내부 웹접속 포트이고 왼쪽 번호가 로컬 웹에서 접속할 포트번호이다. 따라서 왼쪽 부분의 번호를 원하는 포트번호로 수정해주면 된다.
 
             ![docker-compose.yml](./image/docker_compose.png)
+   
+  3. 입력할 데이터 파일 위치
+
+        - KETI_docker_sw/file_to_opentsdb/compose/files/ 디렉터리 안에 입력할 데이터 파일들을 위치시키면 된다.
 
 
-  3. 도커 컨테이너 실행 및 구동 확인
+
+  4. 도커 컨테이너 실행 및 구동 확인
 
      - docker-compose 실행
         
@@ -103,3 +106,15 @@
        ![로그화면](./image/result.PNG)
 
 ----
+
+## 데이터베이스에 데이터 입력 확인
+
+  1. 하나마이크론서버에 설치된 OpenTSDB 웹 접속
+
+      - http://210.181.49.152:60010/ 
+
+  2. 데이터 조회
+
+      - 먼저 입력한 데이터의 처음과 마지막 날짜를 입력한 후, 웹화면에 입력한 metric이름을 입력하면 데이터가 그래프형태로 보여진다
+      
+     ![opentsdb](./image/opentsdb.PNG)
