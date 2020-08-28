@@ -117,4 +117,4 @@
 
       - 먼저 입력한 데이터의 처음과 마지막 날짜를 입력한 후, 웹화면에 입력한 metric이름을 입력하면 데이터가 그래프형태로 보여진다
       
-     ![opentsdb](./image/opentsdb.PNG)
+       ![opentsdb](./image/opentsdb.png)
