@@ -8,7 +8,8 @@
 
 # [1] opentsdb ip
 #ip=db
-ip='210.181.49.152'
+#ip='210.181.49.152'
+ip='127.0.0.1'
 
 # [2] opentsdb port
 port=60010
