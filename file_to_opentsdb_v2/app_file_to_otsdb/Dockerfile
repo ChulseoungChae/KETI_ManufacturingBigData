@@ -14,4 +14,4 @@ RUN pip install flask
 
 WORKDIR /app/FILE2TSDB
 #RUN chmod 755 ./start.sh
-CMD ["python","flask_test.py"]
+CMD ["python","flask_app.py"]
