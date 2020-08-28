@@ -9,7 +9,6 @@ RUN apt-get install -y vim
 RUN apt-get install -y openssh-server
 RUN echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 RUN echo 'root:root' |chpasswd
-RUN pip install flask
 #RUN service ssh start
 
 WORKDIR /app/FILE2TSDB
