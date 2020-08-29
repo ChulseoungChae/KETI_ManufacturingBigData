@@ -16,11 +16,10 @@ header {
   opacity: .9;
   margin-bottom: 100px;
 }
-
 header h1.logo {
   text-align: center;
   margin-left: 10%;
-  font-size: 1.7em;
+  font-size: 1.2em;
   
   color: #fff;
   text-transform: uppercase;
