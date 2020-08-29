@@ -10,7 +10,7 @@ html {
 
 /* Top bar */
 header {
-  background-color: #000000;
+  background-color: #0000FF;
   height: 80px;
   width: 80%;
   opacity: .9;
@@ -19,19 +19,18 @@ header {
 
 header h1.logo {
   text-align: center;
-  margin-left: 10%;
-  font-size: 1.7em;
+  margin-left: 5%;
+  font-size: 1.5em;
   
   color: #fff;
   text-transform: uppercase;
   float: left;
 }
-header h1.logo:hover {
+header h1.logo:ho0ver {
   color: #fff;
   text-decoration: none;
 }
-
-.container {
+.container 
   width: 940px;
   margin: 0 auto;
 }
