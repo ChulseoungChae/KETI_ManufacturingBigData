@@ -107,7 +107,7 @@
   
   #### ※ 인자값들을 웹 페이지에 입력하지않고 shellscript로 실행할 경우
 
-   1. 위 내용의 [4]번 부분 docker-compose 실행
+   1. 바로 위 내용의 [4]번 부분 docker-compose 실행
 
    2. /KETI_docker_sw/file_to_opentsdb/compose/flask_app_volume 디렉토리 내부의 this_run.sh 수정(각 인자값들의 설명은 아래 [웹화면 각 파라미터 설명]에 기재함)
 
