@@ -120,8 +120,28 @@
       혹은
 
           $ docker exec file2otsdb_container bash /app/FILE2TSDB/this_run.sh
+
+   <b>※ Docker를 다시 실행시, 이전에 실행한 도커 컨테이너가 완전히 docker ps 에서 사라진 후에, 다시 docker-compose up 으로 실행해야 다시 적용됨</b>
           
-       
+
+----
+## 웹 페이지(home.html) 템플릿 수정
+
+  - Flask 웹페이지의 위치가 2개가 있음
+
+    ![html_dir](./image/html_dir.png)
+
+    - compose 내부
+
+          ... KETI_docker_sw/file_to_opentsdb_v2/compose/flask_app_volume/templates/home.html
+
+    - FILE2TSDB 내부
+
+          ... KETI_docker_sw/file_to_opentsdb_v2/app_file_to_otsdb/FILE2TSDB/templates/home.html
+
+  - html 파일은 FILE2TSDB 하위 디렉토리의 templates/home.html 파일을 수정하고, should_cp_2_docker_dir_before_commit.sh 실행해 주어야 함
+
+
 ----
 
 ## 웹 화면 각 파마리터 설명

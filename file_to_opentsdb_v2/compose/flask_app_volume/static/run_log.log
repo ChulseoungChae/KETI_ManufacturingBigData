@@ -1,41 +1,31 @@
-[INFO|recursive_search_dir] [2020-08-28 07:40:30,781] [loop] recursive searching ../files_volume
-[INFO|recursive_search_dir] [2020-08-28 07:40:30,796] [loop] recursive searching ../files_volume/millisec_files
-[INFO|<module>] [2020-08-28 07:40:30,799] --------------------file list--------------------
-[INFO|<module>] [2020-08-28 07:40:30,800] file: ../files_volume/01225797052.xlsx   size: 7.757 (MB)
-[INFO|<module>] [2020-08-28 07:40:30,801] file: ../files_volume/01225797247.csv   size: 29.360 (MB)
-[INFO|<module>] [2020-08-28 07:40:30,802] file: ../files_volume/millisec_files/01225797225.csv   size: 0.004 (MB)
-[INFO|<module>] [2020-08-28 07:40:30,803] file: ../files_volume/millisec_files/01225797226.csv   size: 0.004 (MB)
-[INFO|<module>] [2020-08-28 07:40:30,803] --------------------------------------------------
-[INFO|start_work] [2020-08-28 07:40:30,896] 멀티 프로세스 생성 완료 및 작업 시작..
-[INFO|_produce] [2020-08-28 07:40:30,908] 데이터 처리 프로세스 (PID : 32) Start Work
-[INFO|_consume] [2020-08-28 07:40:30,920] DB전송 프로세스 (PID : 43) Start Work
-[INFO|_consume] [2020-08-28 07:40:30,922] DB전송 프로세스 (PID : 44) Start Work
-[INFO|_produce] [2020-08-28 07:40:30,924] 데이터 처리 프로세스 (PID : 33) Start Work
-[INFO|file2df] [2020-08-28 07:40:56,847] 메인 프로세스 : ../files_volume/01225797052.xlsx read 완료 (DataFrame length: 52369)
-[INFO|_produce] [2020-08-28 07:40:57,013] 데이터 처리 프로세스 (PID: 33)  Fieldname: DRIVE_SPEED, length: 26185 처리중..
-[INFO|_produce] [2020-08-28 07:40:57,047] 데이터 처리 프로세스 (PID: 32)  Fieldname: DRIVE_SPEED, length: 26184 처리중..
-[INFO|file2df] [2020-08-28 07:40:58,110] 메인 프로세스 : ../files_volume/01225797247.csv read 완료 (DataFrame length: 122850)
-[INFO|file2df] [2020-08-28 07:40:58,407] 메인 프로세스 : ../files_volume/millisec_files/01225797225.csv read 완료 (DataFrame length: 21)
-[INFO|file2df] [2020-08-28 07:40:58,445] 메인 프로세스 : ../files_volume/millisec_files/01225797226.csv read 완료 (DataFrame length: 21)
-[INFO|<module>] [2020-08-28 07:40:58,457] 메인 프로세스 작업 완료
-[INFO|<module>] [2020-08-28 07:40:58,458] subprocess가 아직 실행 중 입니다...
-[INFO|_produce] [2020-08-28 07:41:00,199] 데이터 처리 프로세스 (PID: 32)  Fieldname: RPM, length: 26184 처리중..
-[INFO|_produce] [2020-08-28 07:41:00,750] 데이터 처리 프로세스 (PID: 33)  Fieldname: RPM, length: 26185 처리중..
-[INFO|_produce] [2020-08-28 07:41:03,498] 데이터 처리 프로세스 (PID: 32)  Fieldname: DRIVE_SPEED, length: 61425 처리중..
-[INFO|_produce] [2020-08-28 07:41:04,629] 데이터 처리 프로세스 (PID: 33)  Fieldname: DRIVE_SPEED, length: 61425 처리중..
-[INFO|_produce] [2020-08-28 07:41:11,637] 데이터 처리 프로세스 (PID: 32)  Fieldname: RPM, length: 61425 처리중..
-[INFO|_produce] [2020-08-28 07:41:13,267] 데이터 처리 프로세스 (PID: 33)  Fieldname: RPM, length: 61425 처리중..
-[INFO|_produce] [2020-08-28 07:41:19,800] 데이터 처리 프로세스 (PID: 32)  Fieldname: DRIVE_SPEED, length: 10 처리중..
-[INFO|_produce] [2020-08-28 07:41:19,815] 데이터 처리 프로세스 (PID: 32)  Fieldname: RPM, length: 10 처리중..
-[INFO|_produce] [2020-08-28 07:41:19,824] 데이터 처리 프로세스 (PID: 32)  Fieldname: DRIVE_SPEED, length: 10 처리중..
-[INFO|_produce] [2020-08-28 07:41:19,834] 데이터 처리 프로세스 (PID: 32)  Fieldname: RPM, length: 10 처리중..
-[INFO|_produce] [2020-08-28 07:41:19,844] 데이터 처리 프로세스 (PID : 32) 정상 종료
-[INFO|_produce] [2020-08-28 07:41:20,762] 데이터 처리 프로세스 (PID: 33)  Fieldname: DRIVE_SPEED, length: 11 처리중..
-[INFO|_produce] [2020-08-28 07:41:20,773] 데이터 처리 프로세스 (PID: 33)  Fieldname: RPM, length: 11 처리중..
-[INFO|_produce] [2020-08-28 07:41:20,778] 데이터 처리 프로세스 (PID: 33)  Fieldname: DRIVE_SPEED, length: 11 처리중..
-[INFO|_produce] [2020-08-28 07:41:20,784] 데이터 처리 프로세스 (PID: 33)  Fieldname: RPM, length: 11 처리중..
-[INFO|_produce] [2020-08-28 07:41:20,788] 데이터 처리 프로세스 (PID : 33) 정상 종료
-[INFO|_consume] [2020-08-28 07:41:25,806] DB 전송 프로세스 (PID : 43) 정상 종료
-[INFO|_consume] [2020-08-28 07:41:25,810] DB 전송 프로세스 (PID : 44) 정상 종료
-[INFO|<module>] [2020-08-28 07:41:25,922] total run time : 55.024655
-[INFO|<module>] [2020-08-28 07:41:25,924] total processed lines : 350522
+[INFO|recursive_search_dir] [2020-08-31 09:47:47,904] [loop] recursive searching ../files_volume
+[INFO|recursive_search_dir] [2020-08-31 09:47:47,908] [loop] recursive searching ../files_volume/millisec_files
+[INFO|<module>] [2020-08-31 09:47:47,911] --------------------file list--------------------
+[INFO|<module>] [2020-08-31 09:47:47,912] file: ../files_volume/01225797052.xlsx   size: 7.757 (MB)
+[INFO|<module>] [2020-08-31 09:47:47,913] file: ../files_volume/01225797247.csv   size: 29.360 (MB)
+[INFO|<module>] [2020-08-31 09:47:47,913] file: ../files_volume/millisec_files/01225797225.csv   size: 0.004 (MB)
+[INFO|<module>] [2020-08-31 09:47:47,914] file: ../files_volume/millisec_files/01225797226.csv   size: 0.004 (MB)
+[INFO|<module>] [2020-08-31 09:47:47,915] --------------------------------------------------
+[INFO|start_work] [2020-08-31 09:47:48,011] 멀티 프로세스 생성 완료 및 작업 시작..
+[INFO|_consume] [2020-08-31 09:47:48,019] DB전송 프로세스 (PID : 44) Start Work
+[INFO|_consume] [2020-08-31 09:47:48,022] DB전송 프로세스 (PID : 45) Start Work
+[INFO|_produce] [2020-08-31 09:47:48,027] 데이터 처리 프로세스 (PID : 33) Start Work
+[INFO|_produce] [2020-08-31 09:47:48,032] 데이터 처리 프로세스 (PID : 34) Start Work
+[INFO|file2df] [2020-08-31 09:48:14,364] 메인 프로세스 : ../files_volume/01225797052.xlsx read 완료 (DataFrame length: 52369)
+[INFO|_produce] [2020-08-31 09:48:15,137] 데이터 처리 프로세스 (PID: 34)  Fieldname: DRIVE_SPEED, length: 26185 처리중..
+[INFO|_produce] [2020-08-31 09:48:15,151] 데이터 처리 프로세스 (PID: 33)  Fieldname: DRIVE_SPEED, length: 26184 처리중..
+[INFO|file2df] [2020-08-31 09:48:15,334] 메인 프로세스 : ../files_volume/01225797247.csv read 완료 (DataFrame length: 122850)
+[INFO|file2df] [2020-08-31 09:48:15,594] 메인 프로세스 : ../files_volume/millisec_files/01225797225.csv read 완료 (DataFrame length: 21)
+[INFO|file2df] [2020-08-31 09:48:15,627] 메인 프로세스 : ../files_volume/millisec_files/01225797226.csv read 완료 (DataFrame length: 21)
+[INFO|<module>] [2020-08-31 09:48:15,632] 메인 프로세스 작업 완료
+[INFO|<module>] [2020-08-31 09:48:15,633] subprocess가 아직 실행 중 입니다...
+[ERROR|_consume] [2020-08-31 09:48:16,069] ###/app/FILE2TSDB/pcs.pyERROR : IOError. system exits
+[ERROR|_consume] [2020-08-31 09:48:16,074] ###/app/FILE2TSDB/pcs.pyERROR : IOError. system exits
+[INFO|_produce] [2020-08-31 09:48:17,333] 데이터 처리 프로세스 (PID: 34)  Fieldname: DRIVE_SPEED, length: 61425 처리중..
+[INFO|_produce] [2020-08-31 09:48:17,504] 데이터 처리 프로세스 (PID: 33)  Fieldname: DRIVE_SPEED, length: 61425 처리중..
+[INFO|_produce] [2020-08-31 09:48:21,966] 데이터 처리 프로세스 (PID: 34)  Fieldname: DRIVE_SPEED, length: 11 처리중..
+[INFO|_produce] [2020-08-31 09:48:21,977] 데이터 처리 프로세스 (PID: 34)  Fieldname: DRIVE_SPEED, length: 11 처리중..
+[INFO|_produce] [2020-08-31 09:48:21,986] 데이터 처리 프로세스 (PID : 34) 정상 종료
+[INFO|_produce] [2020-08-31 09:48:22,096] 데이터 처리 프로세스 (PID: 33)  Fieldname: DRIVE_SPEED, length: 10 처리중..
+[INFO|_produce] [2020-08-31 09:48:22,107] 데이터 처리 프로세스 (PID: 33)  Fieldname: DRIVE_SPEED, length: 10 처리중..
+[INFO|_produce] [2020-08-31 09:48:22,112] 데이터 처리 프로세스 (PID : 33) 정상 종료
