@@ -109,22 +109,22 @@
 
 
 ## 도커 컨테이너 내부 코드 수정 및 수정한 코드 실행
-  1. 일시정지된 docker container 실행
+  1. 일시정지된 docker container 실행 </br>
     ```
     $ docker start docker-machine
     ```
 
-  2. docker container 접속
+  2. docker container 접속 </br>
     ```
     $ docker exec -it docker-machine bash
     ```
 
-  3. 메인 코드에서 코드 수정
+  3. 메인 코드에서 코드 수정 </br>
     ```
     $ vi manufacturing_analysis.py
     ```
 
-  4. 수정한 코드가 적용된 docker container 재실행
+  4. 수정한 코드가 적용된 코드 실행 </br>
     ```
     $ python3 manufacturing_analysis.py
     ```
