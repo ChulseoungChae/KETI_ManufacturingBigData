@@ -71,7 +71,7 @@
       
       - 아래링크에서 원하는 디렉토리로 zip파일 다운로드 후 압축해제
 
-          [Link(https://github.com/ChulseoungChae/KETI_docker_sw/releases)](https://github.com/ChulseoungChae/KETI_docker_sw/releases
+          [Link(https://github.com/ChulseoungChae/KETI_ManufacturingBigData/releases)](https://github.com/ChulseoungChae/KETI_docker_sw/releases
 )
       
   2. compose 디렉토리 이동 및 docker-compose.yml 파일 수정
